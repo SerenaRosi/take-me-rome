@@ -3738,6 +3738,23 @@ body.is-menu-visible #menu .close {
   object-fit: cover;
 }
 
+.swiper-pagination-fraction,
+.swiper-pagination-custom {
+    color: #000; /* Change text color */
+    font-size: 30px; /* Adjust font size */
+    text-align: center; /* Center text */
+
+}
+
+/* Specific adjustments for fraction text */
+.swiper-pagination-fraction {
+    bottom: 10px; /* Distance from the bottom */
+    position: absolute;
+    width: 100%;
+}
+
+
+/* 
 .swiper {
   width: 100%;
   height: 100px;
@@ -3780,11 +3797,11 @@ body.is-menu-visible #menu .close {
 }
 
 .swiper-button-next, .swiper-button-prev {
-  width: 80px !important; /* Adjust width as needed */
-  height: 80px !important; /* Adjust height as needed */
-  border: 3px solid white; /* Border around the button */
-  border-radius: 20px; /* Half of width or height to make it a perfect circle */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Shadow for 3D effect */
+  width: 80px !important; /
+  height: 80px !important; 
+  border: 3px solid white;
+  border-radius: 20px; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -3792,9 +3809,9 @@ body.is-menu-visible #menu .close {
 
 @media (max-width: 767px) {
   .swiper-button-next, .swiper-button-prev {
-    display: none !important; /* Hide buttons on mobile */
+    display: none !important;
   }
-}
+} */
 
 /* top banner */
 
@@ -3973,6 +3990,22 @@ body.is-menu-visible #menu .close {
   -webkit-user-select: none;
 }
 
+.img-numeration {
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+  color: #fff; /* White text color */
+  padding: 10px; /* Some padding */
+  font-size: 30px; /* Adjust font size as needed */
+  text-align: center; /* Center the text */
+  position: absolute; /* Position it over the image */
+  bottom: 0; /* Align to the bottom of the figure */
+  left: 0; /* Align to the left of the figure */
+  width: 100%; /* Full width */
+  box-sizing: border-box; /* Make sure padding doesn't affect the total width */
+  transition: transform 0.3s ease; /* Smooth transition for hover effect */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Ensure it's centered regardless of its width */
+  z-index: 10; /* Ensure it's above the image */
+}
 .next {
   right: 0;
   border-radius: 3px 0 0 3px;
@@ -4089,8 +4122,8 @@ body.is-menu-visible #menu .close {
 /* Close Button */
 .main-close {
   position: absolute;
-  top: 15px; /* Adjust as needed */
-  right: 450px; /* Adjust as needed */
+  top: 20px; /* Adjust as needed */
+  right: 30%; /* Adjust as needed */
   color: #f1f1f1;
   font-size: 70px;
   font-weight: bold;
@@ -4110,6 +4143,8 @@ body.is-menu-visible #menu .close {
 .main-next {
   cursor: pointer;
   position: absolute;
+  transform: translateY(-50%);
+  z-index: 1050;
   top: 50%;
   width: auto;
   padding: 16px;
@@ -4124,7 +4159,7 @@ body.is-menu-visible #menu .close {
 }
 
 .main-next {
-  right: 0;
+  right: 10px;
   border-radius: 3px 0 0 3px;
 }
 
@@ -4132,6 +4167,7 @@ body.is-menu-visible #menu .close {
 .main-next:hover {
   background-color: rgba(0,0,0,0.8);
 }
+
 
 /* Hide the main-gallery and swiper gallery by default */
 .main-gallery,
@@ -4141,7 +4177,7 @@ body.is-menu-visible #menu .close {
 }
 
 /* Large devices (desktops, 992px and up) */
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1025px) {
     .mySwiper2,
     .mySwiper {
         display: none ! important; 
