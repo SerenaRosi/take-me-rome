@@ -272,9 +272,10 @@
 									<img class="main-modal-content" id="main-lightbox-img">
 									<a class="main-prev" onclick="main_changeImg(-1)">&#10094;</a>
 									<a class="main-next" onclick="main_changeImg(1)">&#10095;</a>
+									<div class="img-numeration" id="img-numeration"></div>
 								</div>
 	
-								<div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
+								<div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper">
 									<div class="swiper-wrapper">
 									  <div class="swiper-slide">
 										<img src="images/cr91/1.jpg" />
@@ -403,8 +404,11 @@
 									</div>
 									<div class="swiper-button-next"></div>
 									<div class="swiper-button-prev"></div>
+									<div class="swiper-pagination"></div>
+									
 								  </div>
-								  <div thumbsSlider="" class="swiper mySwiper">
+								  
+							<!-- 	  <div thumbsSlider="" class="swiper mySwiper">
 									<div class="swiper-wrapper">
 									  <div class="swiper-slide">
 										<img src="images/cr91/1.jpg" />
@@ -530,7 +534,7 @@
 										<img src="images/cr91/41.jpg" />
 									  </div>
 									</div>
-								  </div> 
+								  </div>  -->
 <!-- 								
 							<div class="wrapper">
 								<i id="left" class="fa-solid fa-angle-left"></i>
@@ -796,7 +800,6 @@
 
 			<script>
 				document.querySelectorAll('img').forEach((img) => {
-					console.log(img.src)
 				let imageObject = {
 					"@context": "https://schema.org/",
 					"@type": "ImageObject",
@@ -805,7 +808,6 @@
 				};
 				
 				// Qui puoi aggiungere l'oggetto JSON al DOM o loggarlo per vederlo
-				console.log(imageObject);
 				let script = document.createElement('script');
 				script.type = 'application/ld+json';
 				script.textContent = JSON.stringify(imageObject);
