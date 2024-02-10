@@ -3690,3 +3690,548 @@ body.is-menu-visible #menu .close {
 .bigger-list {
   font-size: 25px;
 }
+
+
+/* parallax */
+
+.parallax {
+  /* The image used */
+  background-image: url("/images/cr91/1.jpg");
+
+  /* Set a specific height */
+  min-height: 500px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center; /* Adjust the background position */
+  background-repeat: no-repeat;
+  background-size: cover; /* Adjust the background size */
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) { /* Adjust the max-width as needed */
+  .parallax {
+    /* Change the background-attachment to scroll for mobile devices */
+    background-attachment: scroll;
+  }
+}
+
+/* swiper */
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper {
+  width: 100%;
+  height: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.swiper-slide {
+  background-size: cover;
+  background-position: center;
+}
+
+.mySwiper2 {
+  display: none;
+  height: 650px;
+  width: 100%;
+}
+
+.mySwiper {
+  height: 20%;
+  box-sizing: border-box;
+  padding: 10px 0;
+}
+
+.mySwiper .swiper-slide {
+  width: 25%;
+  height: 100%;
+  opacity: 0.4;
+}
+
+.mySwiper .swiper-slide-thumb-active {
+  opacity: 1;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-button-next, .swiper-button-prev {
+  width: 80px !important; /* Adjust width as needed */
+  height: 80px !important; /* Adjust height as needed */
+  border: 3px solid white; /* Border around the button */
+  border-radius: 20px; /* Half of width or height to make it a perfect circle */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Shadow for 3D effect */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 767px) {
+  .swiper-button-next, .swiper-button-prev {
+    display: none !important; /* Hide buttons on mobile */
+  }
+}
+
+/* top banner */
+
+.top-banner {
+  width: 100%; /* Full width */
+  background-color: #f2f2f2; /* Background color */
+  color: #000000; /* Text color */
+  text-align: left; /* Center the text */
+  padding: 10px 50px; /* Some padding */
+  position: absolute; /* Fixed at the top */
+  top: 0; /* Stick to the top */
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+/* Styles for smaller screens */
+@media (max-width: 768px) {
+  .top-banner {
+      padding: 5px 0; /* Less padding on smaller screens */
+      font-size: 14px; /* Smaller font size on smaller screens */
+  }
+}
+
+.logo-container {
+  text-align: center;
+  padding: 30px;
+}
+
+
+
+/* Google translate element  */
+
+.translate-wrapper {
+  display: flex;
+  justify-content: space-between; /* Align one item to the left and one to the right */
+  align-items: center; /* Align items vertically in the center */
+  height: 50px; /* Adjust as per your design */
+  margin: 10px;
+  padding: 10px;
+  background-color: #f2f2f2; /* Light grey background */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+#google_translate_element {
+  margin-left: auto; /* Pushes itself to the right */
+  /* Additional styles for the Google Translate widget if needed */
+}
+
+/* If you want to style the dropdown specifically */
+#google_translate_element select {
+  padding: 5px;
+  border: 1px solid #ccc; /* Light grey border */
+  border-radius: 5px; /* Rounded corners */
+  background-color: white;
+  /* Further styling as needed */
+}
+
+/* GALLERY */
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 15px;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.span-two-columns {
+  grid-column: span 2; /* This item will span two columns */
+}
+
+.span-two-rows {
+  grid-row: span 2; /* This item will span two rows */
+}
+
+
+.gallery-item {
+  overflow: hidden;
+  position: relative; /* Relative positioning for the figure */
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block; /* Removes bottom space under the image */
+  transition: transform 0.3s ease;
+  cursor: pointer; /* Changes the cursor to a pointer on hover */
+}
+
+
+.gallery-item img:hover {
+  transform: scale(1.1);
+}
+
+.gallery-item img:hover {
+  transform: scale(1.1);
+}
+
+.gallery-item figcaption {
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+  color: #fff; /* White text color */
+  padding: 10px; /* Some padding */
+  font-size: 14px; /* Adjust font size as needed */
+  text-align: center; /* Center the text */
+  position: absolute; /* Position it over the image */
+  bottom: 0; /* Align to the bottom of the figure */
+  left: 0; /* Align to the left of the figure */
+  width: 100%; /* Full width */
+  box-sizing: border-box; /* Make sure padding doesn't affect the total width */
+  transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.gallery-item:hover figcaption {
+  transform: translateY(0); /* Move the caption up on hover */
+}
+
+/* Lightbox (Modal) */
+.lightbox-modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.9);
+}
+
+/* Modal Content (Image) */
+.modal-content {
+  position: relative; /* Add this line */
+  margin: auto;
+  display: block;
+  width: 90%; /* Increased from 80% to 90% */
+  max-width: 1000px; /* Optionally increase the max width for larger zoom */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Close Button */
+.close {
+  position: absolute;
+  top: 15px; /* Adjust as needed */
+  right: 450px; /* Adjust as needed */
+  color: #f1f1f1;
+  font-size: 70px;
+  font-weight: bold;
+  transition: 0.3s;
+  z-index: 10; /* Ensure it's above the image */
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Navigation Arrows */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 40px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Lightbox caption container */
+.caption-container {
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+  color: white; /* White text color */
+  padding: 15px 30px; /* Increase padding for larger touch area */
+  position: absolute; /* Position it over the image */
+  bottom: 0; /* Align to the bottom of the lightbox */
+  width: 80%; /* Adjust width as needed */
+  left: 10%; /* Center the caption container */
+  max-height: 150px; /* Maximum height of the caption container */
+  overflow-y: auto; /* Add scroll for long captions */
+  box-sizing: border-box; /* Make sure padding doesn't affect the total width */
+
+  font-size: 16px; /* Adjust font size as needed */
+}
+
+/* Ensure the caption doesn't overflow the container */
+.caption-container p {
+  margin: 0; /* Remove default margin */
+  word-wrap: break-word;
+}
+/* ... existing styles ... */
+
+@media only screen and (max-width: 768px) {
+    /* Modal Content (Image) for smaller screens */
+    .modal-content {
+        width: 95%; /* Larger percentage of screen width */
+        max-width: none; /* Remove max-width constraint */
+    }
+    
+    /* Close Button for smaller screens */
+    .close {
+        top: 10px; /* Closer to the edge */
+        right: 70px; /* Closer to the edge */
+        font-size: 30px; /* Smaller close button */
+    }
+    
+    /* Adjust navigation arrows for smaller screens, if they are too large or intrusive */
+    .prev, .next {
+        font-size: 18px; /* Smaller arrows */
+        padding: 10px; /* Less padding */
+    }
+}
+
+
+/* MAIN GALLERY  */
+
+.main-gallery {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-gap: 15px;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.main-gallery-item {
+  overflow: hidden;
+  position: relative; /* Relative positioning for the figure */
+}
+
+.main-gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block; /* Removes bottom space under the image */
+  transition: transform 0.3s ease;
+  cursor: pointer; /* Changes the cursor to a pointer on hover */
+}
+
+.main-gallery-item img:hover {
+  transform: scale(1.1);
+}
+
+.main-gallery-item img:hover {
+  transform: scale(1.1);
+}
+
+
+/* Lightbox (Modal) */
+.main-lightbox-modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.9);
+}
+
+/* Modal Content (Image) */
+.main-modal-content {
+  position: relative; /* Add this line */
+  margin: auto;
+  display: block;
+  width: 90%; /* Increased from 80% to 90% */
+  max-width: 1000px; /* Optionally increase the max width for larger zoom */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Close Button */
+.main-close {
+  position: absolute;
+  top: 15px; /* Adjust as needed */
+  right: 450px; /* Adjust as needed */
+  color: #f1f1f1;
+  font-size: 70px;
+  font-weight: bold;
+  transition: 0.3s;
+  z-index: 10; /* Ensure it's above the image */
+}
+
+.main-close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Navigation Arrows */
+.main-prev,
+.main-next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 40px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.main-next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.main-prev:hover,
+.main-next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Hide the main-gallery and swiper gallery by default */
+.main-gallery,
+.mySwiper2,
+.mySwiper {
+    display: none; 
+}
+
+/* Large devices (desktops, 992px and up) */
+@media screen and (min-width: 992px) {
+    .mySwiper2,
+    .mySwiper {
+        display: none ! important; 
+    }
+    .main-gallery {
+        display: grid; 
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media screen and (max-width: 600px) {
+    .main-gallery {
+        display: none;
+    }
+    .mySwiper2,
+    .mySwiper {
+        display: block;
+    }
+}
+
+
+/* GRID CONTAINER FOR BEDROOMS */
+.grid-container-bed {
+  display: grid;
+  grid-gap: 10px;
+}
+
+.item-grid-container-bed {
+  background-color: #ef851c49;
+  color: #050505;
+  padding: 10px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .grid-container-bed {
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); /* Two columns for medium-sized screens and above */
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-container-bed {
+    grid-template-columns: repeat(
+      3,
+      1fr
+    ); /* Three columns for large screens and above */
+  }
+}
+
+/* BREADCRUMBS */
+
+.breadcrumbs {
+    display: block;
+    padding: 5px;
+}
+
+.breadcrumbs ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.breadcrumbs li {
+    margin-right: 10px;
+    white-space: nowrap; /* Prevent text from breaking into multiple lines */
+    overflow: hidden; /* Hide overflow */
+    text-overflow: ellipsis; /* Show ellipsis for overflowed content */
+    /* max-width: 160px; /* You can adjust this value based on your needs */
+
+}
+
+.breadcrumbs li:last-child {
+    margin-right: 0;
+}
+
+.breadcrumbs span {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .breadcrumbs li {
+      max-width: 100px; /* Shorten the max width on smaller screens */
+      font-size: 0.9em; /* Reduce font size */
+  }
+}
