@@ -330,23 +330,28 @@
 
 // SWIPER 
 
-var swiper = new Swiper(".mySwiper", {
+// var swiper = new Swiper(".mySwiper", {
+//   loop: true,
+//   spaceBetween: 10,
+//   slidesPerView: 10,
+//   freeMode: true,
+//   watchSlidesProgress: true,
+// });
+var swiper2 = new Swiper(".mySwiper", {
   loop: true,
-  spaceBetween: 10,
-  slidesPerView: 10,
-  freeMode: true,
-  watchSlidesProgress: true,
-});
-var swiper2 = new Swiper(".mySwiper2", {
-  loop: true,
+  pagination: {
+    el: ".swiper-pagination",
+    type: "fraction",
+  },
   spaceBetween: 10,
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
   thumbs: {
-    swiper: swiper,
+    swiper: swiper2,
   },
+  zoom: true,
 });
 
 // GOOGLE TRANSLATE 
@@ -360,7 +365,7 @@ function googleTranslateElementInit() {
 // Get modal element
 var modal = document.getElementById('lightbox-modal');
 var modalImg = document.getElementById("lightbox-img");
-var lightboxCaption = document.getElementById('lightbox-caption'); // Get the caption element
+var lightboxCaption = document.getElementById('lightbox-caption'); 
 var images = document.querySelectorAll('.gallery-item img');
 var currentIndex = 0;
 
@@ -371,7 +376,7 @@ images.forEach((img, index) => {
         modalImg.src = this.src;
         currentIndex = index;
         // Set caption
-        var captionText = img.nextElementSibling ? img.nextElementSibling.innerHTML : ''; // Check if there's a figcaption
+        var captionText = img.nextElementSibling ? img.nextElementSibling.innerHTML : ''; 
         lightboxCaption.innerHTML = captionText;
     }
 });
@@ -389,7 +394,7 @@ function changeImg(step) {
     if (currentIndex < 0) currentIndex = images.length - 1;
     modalImg.src = images[currentIndex].src;
     // Update caption
-    var newCaptionText = images[currentIndex].nextElementSibling ? images[currentIndex].nextElementSibling.innerHTML : ''; // Check if there's a figcaption
+    var newCaptionText = images[currentIndex].nextElementSibling ? images[currentIndex].nextElementSibling.innerHTML : ''; 
     lightboxCaption.innerHTML = newCaptionText;
 }
 
@@ -403,7 +408,10 @@ window.onclick = function(event) {
 
 
 // MAIN GALLERY LIGTHBOX
-
+function updateNumeration(current, total) {
+  var numerationText = document.getElementById('img-numeration');
+  numerationText.innerText = `${current} of ${total}`;
+}
 // Get modal element
 var main_modal = document.getElementById('main-lightbox-modal');
 var main_modalImg = document.getElementById("main-lightbox-img");
@@ -417,6 +425,7 @@ main_images.forEach((mimg, mindex) => {
         main_modal.style.display = "block";
         main_modalImg.src = this.src;
         main_currentIndex = mindex;
+        updateNumeration(main_currentIndex + 1, main_images.length); 
         // Set caption
         // var captionText = mimg.nextElementSibling ? mimg.nextElementSibling.innerHTML : ''; // Check if there's a figcaption
         // main_lightboxCaption.innerHTML = captionText;
@@ -431,12 +440,13 @@ main_span.onclick = function() {
 
 // Change image (previous or next)
 function main_changeImg(step) {
-    currentIndex += step;
-    if (currentIndex >= main_images.length) main_currentIndex = 0;
-    if (currentIndex < 0) main_currentIndex = main_images.length - 1;
-    main_modalImg.src = main_images[currentIndex].src;
+    main_currentIndex += step;
+    if (main_currentIndex >= main_images.length) main_currentIndex = 0;
+    if (main_currentIndex < 0) main_currentIndex = main_images.length - 1;
+    main_modalImg.src = main_images[main_currentIndex].src;
+    updateNumeration(main_currentIndex + 1, main_images.length);
     // Update caption
-    var newCaptionText = main_images[currentIndex].nextElementSibling ? main_images[main_currentIndex].nextElementSibling.innerHTML : ''; // Check if there's a figcaption
+    var newCaptionText = main_images[main_currentIndex].nextElementSibling ? main_images[main_currentIndex].nextElementSibling.innerHTML : ''; // Check if there's a figcaption
     // main_lightboxCaption.innerHTML = newCaptionText;
 }
 
