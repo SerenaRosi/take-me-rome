@@ -474,10 +474,10 @@ function touchMove(event) {
 // Function to handle the end of a touch
 function touchEnd() {
     if (touchEndX < touchStartX) {
-        changeImg(1); // Swipe Left, Next Image
+        main_changeImg(1); // Swipe Left, Next Image
     }
     if (touchEndX > touchStartX) {
-        changeImg(-1); // Swipe Right, Previous Image
+        main_changeImg(-1); // Swipe Right, Previous Image
     }
 }
 
