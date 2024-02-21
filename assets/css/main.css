@@ -3659,6 +3659,7 @@ body.is-menu-visible #menu .close {
 .grid-container {
   display: grid;
   grid-gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
 
 .item {
@@ -3667,13 +3668,13 @@ body.is-menu-visible #menu .close {
   padding: 10px;
   text-align: left;
 }
-
+/* 
 @media (min-width: 768px) {
   .grid-container {
     grid-template-columns: repeat(
       2,
       1fr
-    ); /* Two columns for medium-sized screens and above */
+    ); 
   }
 }
 
@@ -3682,9 +3683,9 @@ body.is-menu-visible #menu .close {
     grid-template-columns: repeat(
       3,
       1fr
-    ); /* Three columns for large screens and above */
+    ); 
   }
-}
+} */
 
 /* Bigger list */
 .bigger-list {
@@ -3694,18 +3695,20 @@ body.is-menu-visible #menu .close {
 
 /* parallax */
 
-.parallax {
-  /* The image used */
-  background-image: url("/images/cr91/1.jpg");
-
-  /* Set a specific height */
-  min-height: 500px;
-
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: center; /* Adjust the background position */
-  background-repeat: no-repeat;
-  background-size: cover; /* Adjust the background size */
+@media (hover: hover) and (pointer: fine) {
+  .parallax {
+    /* The image used */
+    background-image: url("");
+  
+    /* Set a specific height */
+    min-height: 500px;
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center; /* Adjust the background position */
+    background-repeat: no-repeat;
+    background-size: cover; /* Adjust the background size */
+  }
 }
 
 
@@ -4199,6 +4202,7 @@ body.is-menu-visible #menu .close {
 .grid-container-bed {
   display: grid;
   grid-gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
 
 .item-grid-container-bed {
@@ -4206,14 +4210,15 @@ body.is-menu-visible #menu .close {
   color: #050505;
   padding: 10px;
   text-align: center;
+
 }
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
   .grid-container-bed {
     grid-template-columns: repeat(
       2,
       1fr
-    ); /* Two columns for medium-sized screens and above */
+    ); 
   }
 }
 
@@ -4222,9 +4227,9 @@ body.is-menu-visible #menu .close {
     grid-template-columns: repeat(
       3,
       1fr
-    ); /* Three columns for large screens and above */
+    ); 
   }
-}
+} */
 
 /* BREADCRUMBS */
 
